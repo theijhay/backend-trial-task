@@ -5,6 +5,7 @@ const {
   createPaymentValidation,
   updatePaymentValidation,
   idValidation,
+  vendorIdValidation,
   paginationValidation,
   handleValidationErrors,
 } = require('../middleware/validation');
@@ -143,7 +144,7 @@ router.post('/', createPaymentValidation, handleValidationErrors, async (req, re
 });
 
 // GET /payments/vendor/:vendorId - Get payments by vendor
-router.get('/vendor/:vendorId', idValidation, paginationValidation, handleValidationErrors, async (req, res, next) => {
+router.get('/vendor/:vendorId', vendorIdValidation, paginationValidation, handleValidationErrors, async (req, res, next) => {
   try {
     const { vendorId } = req.params;
     const page = parseInt(req.query.page) || 1;

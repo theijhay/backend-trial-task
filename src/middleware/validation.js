@@ -51,8 +51,8 @@ const createVendorValidation = [
     .withMessage('Please provide a valid email address'),
   body('phone')
     .optional()
-    .matches(/^[\+]?[1-9][\d]{0,15}$/)
-    .withMessage('Please provide a valid phone number'),
+    .matches(/^[\+]?[0-9]{10,15}$/)
+    .withMessage('Please provide a valid phone number (10-15 digits, optional + prefix)'),
   body('address')
     .optional()
     .isLength({ max: 500 })
@@ -82,8 +82,8 @@ const updateVendorValidation = [
     .withMessage('Please provide a valid email address'),
   body('phone')
     .optional()
-    .matches(/^[\+]?[1-9][\d]{0,15}$/)
-    .withMessage('Please provide a valid phone number'),
+    .matches(/^[\+]?[0-9]{10,15}$/)
+    .withMessage('Please provide a valid phone number (10-15 digits, optional + prefix)'),
   body('address')
     .optional()
     .isLength({ max: 500 })
@@ -157,6 +157,12 @@ const idValidation = [
     .withMessage('ID is required'),
 ];
 
+const vendorIdValidation = [
+  param('vendorId')
+    .notEmpty()
+    .withMessage('Vendor ID is required'),
+];
+
 const paginationValidation = [
   query('page')
     .optional()
@@ -177,5 +183,6 @@ module.exports = {
   createPaymentValidation,
   updatePaymentValidation,
   idValidation,
+  vendorIdValidation,
   paginationValidation,
 };
