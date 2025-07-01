@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('🌱 Seeding database...');
+  console.log('Seeding database...');
 
   try {
     // Create admin user
@@ -25,7 +25,7 @@ async function main() {
       },
     });
 
-    console.log('✅ Created admin user:', { id: adminUser.id, email: adminUser.email });
+    console.log('Created admin user:', { id: adminUser.id, email: adminUser.email });
 
     // Create sample vendors
     console.log('Creating sample vendors...');
@@ -60,7 +60,7 @@ async function main() {
       },
     });
 
-    console.log('✅ Created vendors:', { 
+    console.log('Created vendors:', { 
       vendor1: { id: vendor1.id, name: vendor1.name }, 
       vendor2: { id: vendor2.id, name: vendor2.name } 
     });
@@ -88,18 +88,18 @@ async function main() {
       },
     });
 
-    console.log('✅ Created payments:', { 
+    console.log('Created payments:', { 
       payment1: { id: payment1.id, amount: payment1.amount }, 
       payment2: { id: payment2.id, amount: payment2.amount } 
     });
     
-    console.log('🎉 Seeding completed successfully!');
-    console.log('🔑 Login credentials:');
-    console.log('   Email: isaacjohn@gmail.com');
-    console.log('   Password: isaac123');
+    console.log('Seeding completed successfully!');
+    console.log('Login credentials:');
+    console.log('Email: isaacjohn@gmail.com');
+    console.log('Password: isaac123');
     
   } catch (error) {
-    console.error('❌ Seeding failed:', error);
+    console.error('Seeding failed:', error);
     throw error;
   }
 }

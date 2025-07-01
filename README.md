@@ -2,7 +2,7 @@
 
 A professional REST API for managing vendors and payments, built with Node.js, Express, Prisma, and PostgreSQL.
 
-## 🚀 Features
+## Features
 
 - **Vendor Management**: Create, read, update, and delete vendors
 - **Payment Processing**: Manage payments linked to vendors
@@ -14,13 +14,13 @@ A professional REST API for managing vendors and payments, built with Node.js, E
 - **Rate Limiting**: Protection against abuse
 - **Security**: Helmet.js for security headers, CORS support
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js (v16 or higher)
 - PostgreSQL (v12 or higher)
 - npm or yarn
 
-## 🛠️ Installation
+## Installation
 
 1. **Clone the repository**:
    ```bash
@@ -66,7 +66,7 @@ A professional REST API for managing vendors and payments, built with Node.js, E
    npm start
    ```
 
-## 📚 API Documentation
+## API Documentation
 
 ### Base URL
 ```
@@ -80,7 +80,7 @@ Most endpoints require authentication. Include the JWT token in the Authorizatio
 Authorization: Bearer <your-jwt-token>
 ```
 
-### 🔐 Authentication Endpoints
+### Authentication Endpoints
 
 #### Register User
 ```http
@@ -112,7 +112,7 @@ GET /api/v1/auth/profile
 Authorization: Bearer <token>
 ```
 
-### 👥 Vendor Endpoints
+### Vendor Endpoints
 
 #### Create Vendor
 ```http
@@ -166,7 +166,7 @@ DELETE /api/v1/vendors/:id
 Authorization: Bearer <token>
 ```
 
-### 💳 Payment Endpoints
+### Payment Endpoints
 
 #### Create Payment
 ```http
@@ -239,12 +239,12 @@ GET /api/v1/payments/stats/overview
 Authorization: Bearer <token>
 ```
 
-### 🔍 Health Check
+### Health Check
 ```http
 GET /health
 ```
 
-## 📊 Database Schema
+## Database Schema
 
 ### Users
 - `id`: String (Primary Key)
@@ -277,7 +277,7 @@ GET /health
 - `createdAt`: DateTime
 - `updatedAt`: DateTime
 
-## 🛡️ Security Features
+## Security Features
 
 - **JWT Authentication**: Secure token-based authentication
 - **Password Hashing**: bcryptjs for secure password storage
@@ -286,7 +286,7 @@ GET /health
 - **Helmet**: Security headers for protection
 - **Input Validation**: Comprehensive validation and sanitization
 
-## 🧪 Testing the API
+## Testing the API
 
 ### Using the Seeded Data
 
@@ -323,7 +323,7 @@ After running `npm run seed`, you can test with these credentials:
      -d '{"amount": 500.00, "description": "Monthly service fee", "vendorId": "<vendor-id>"}'
    ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Environment Variables for Production
 
@@ -348,7 +348,7 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-## 📝 Additional Features
+## Additional Features
 
 - **Pagination**: All list endpoints support pagination
 - **Filtering**: Advanced filtering options
@@ -356,23 +356,3 @@ CMD ["npm", "start"]
 - **Statistics**: Payment overview and analytics
 - **Audit Trail**: Timestamps for all operations
 - **Soft Deletes**: Vendor deletion with payment validation
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-For support, please contact the development team or create an issue in the repository.
-
----
-
-Built with ❤️ using Node.js, Express, Prisma, and PostgreSQL.
